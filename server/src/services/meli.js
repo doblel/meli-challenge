@@ -4,8 +4,8 @@ const meliApi = axios.create({
   baseURL: 'https://api.mercadolibre.com/',
 });
 
-const searchItems = (searchParam) => {
-  return meliApi.get(`sites/MLA/search?q=${searchParam}`)
+const searchItems = (searchParam, limit =  4) => {
+  return meliApi.get(`sites/MLA/search?q=${searchParam}&limit=${limit}`)
     .then(res => res.data);
 };
 
