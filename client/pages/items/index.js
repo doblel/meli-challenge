@@ -1,5 +1,6 @@
 import React from 'react';
 import MetaData from '../../components/MetaData';
+import ProductList from '../../components/ProductList';
 import { searchItems } from '../../services/api';
 
 export async function getServerSideProps({ params, query }) {
@@ -17,7 +18,7 @@ export async function getServerSideProps({ params, query }) {
 const SearchPage = (props) => (
   <>
     <MetaData searchParam={props.search} />
-    {props.items.map(i => <p>{i.id} - {i.title}</p>)}
+    <ProductList items={props.items} />
   </>
 )
 
