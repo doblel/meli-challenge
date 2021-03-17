@@ -1,0 +1,60 @@
+@import './variables';
+
+.nav {
+  height: 55px;
+  width: 100%;
+  background: $app-yellow;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+
+  &__content {
+    width: 100%;
+    max-width: $app-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo {
+    cursor: pointer;
+  }
+}
+
+.searchForm {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  margin-left: $padding-md;
+
+  &__input {
+    width: 100%;
+    border: none;
+    padding: 0 10px;
+    font-size: $font-18;
+    color: $app-grey-4;
+    border-top-left-radius: $app-border-radius;
+    border-bottom-left-radius: $app-border-radius;
+
+    &::placeholder {
+      color: $app-grey-2;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    background: $app-grey-1;
+    border: none;
+    border-top-right-radius: $app-border-radius;
+    border-bottom-right-radius: $app-border-radius;
+    outline: none;
+    cursor: pointer;
+  }
+}

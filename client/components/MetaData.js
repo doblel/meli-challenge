@@ -5,7 +5,7 @@ const MetaData = ({ searchParam = '', item = {} }) => {
   const term = item && item.title || searchParam;
   const title = `${term} | Mercado Libre`;
   const description = `Compra y vende ${term} en Mercado Libre`;
-  const keywords = `${term}, Compra ${term}, Vende ${term}, Compra/Venta`
+  const keywords = `${term}, Compra ${term}, Vende ${term}`
 
   return (
     <Head>
