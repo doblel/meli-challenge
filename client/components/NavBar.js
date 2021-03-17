@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Image from 'next/image'
+import Image from 'next/Image'
 
 import styles from '../styles/NavBar.module.scss';
 
