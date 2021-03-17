@@ -1,5 +1,6 @@
 import React from 'react';
 import MetaData from '../../components/MetaData';
+import ProductDetail from '../../components/ProductDetail';
 import { getItemDetails } from '../../services/api';
 
 export async function getServerSideProps({ params, query }) {
@@ -14,10 +15,10 @@ export async function getServerSideProps({ params, query }) {
   }
 }
 
-const ItemDetals = (props) => (
+const ItemDetals = ({ item }) => (
   <>
-    <MetaData item={props.item} />
-    <h1>Details page {props.item.title}</h1>
+    <MetaData item={item} />
+    <ProductDetail item={item} />
   </>
 )
 
