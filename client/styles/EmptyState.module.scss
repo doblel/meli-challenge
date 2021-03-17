@@ -1,0 +1,25 @@
+@import './variables';
+
+.emptyState {
+  background: $app-white;
+  padding: $spacing-md;
+  margin-top: $spacing-lg;
+  border-radius: $app-border-radius;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+
+  &__title {
+    font-size: $font-24;
+    font-weight: 600;
+    color: $app-grey-4;
+  }
+
+  &__subtitle {
+    font-size: $font-18;
+    font-weight: 400;
+    color: $app-grey-2;
+  }
+}
