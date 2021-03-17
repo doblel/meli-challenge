@@ -28,9 +28,9 @@ npm run dev
 + Improve responsive design
 + Add spinner/progress bar on route navigation
 + Tests
-+ Create NotFound/Error Handling components
-+ Context Provider to Categories Breadcrumb
++ <s>Create NotFound/Error Handling components</s>
++ <s>Context Provider to Categories Breadcrumb</s>
 + Lazy load images
-+ Create basic HomePage to replace the blank page
-+ Update meta tags on each view based on search param (list view) or item title (detail view)
++ <s>Create basic HomePage to replace the blank page</s>
++ <s>Update meta tags on each view based on search param (list view) or item title (detail view)</s>
 + Add tabIndex, role, alt, etc to improve accessibility and usability
