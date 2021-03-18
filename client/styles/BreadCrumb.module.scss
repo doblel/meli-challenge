@@ -1,0 +1,25 @@
+@import './variables';
+
+.breadCrumb {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  color: $app-grey-2;
+  font-size: $font-14;
+  margin: $spacing-md 0;
+
+  &__divider {
+    margin: 0 5px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+
+    &:last-child {
+      font-weight: 600;
+      color: $app-grey-3;
+    }
+  }
+}

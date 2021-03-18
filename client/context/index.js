@@ -3,7 +3,7 @@ import React, { useState, useContext, createContext, useMemo } from 'react';
 export const AppContext = createContext({});
 
 export const AppContextProvider = ({ children }) => {
-  const [categories, setCategories] = useState(['hola', 'mundo']);
+  const [categories, setCategories] = useState([]);
 
   const values = useMemo(() => ({
     categories,
