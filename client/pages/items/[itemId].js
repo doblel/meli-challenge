@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
-import MetaData from '../../components/MetaData';
-import ProductDetail from '../../components/ProductDetail';
-import useAppContext from '../../context';
-import { getItemDetails } from '../../services/api';
+import React, { useEffect } from 'react'
+
+import MetaData from '../../components/MetaData'
+import ProductDetail from '../../components/ProductDetail'
+import useAppContext from '../../context'
+import { getItemDetails } from '../../services/api'
 
 export async function getServerSideProps({ params, query }) {
-  const { itemId } = params;
-  const { item, categories } = await getItemDetails(itemId);
+  const { itemId } = params
+  const { item, categories } = await getItemDetails(itemId)
 
   return {
     props: {
@@ -17,9 +18,9 @@ export async function getServerSideProps({ params, query }) {
 }
 
 const ItemDetals = ({ item = {}, categories = [] }) => {
-  const { setCategories } = useAppContext();
+  const { setCategories } = useAppContext()
 
-  useEffect(() => setCategories(categories), []);
+  useEffect(() => setCategories(categories), [])
 
   return (
     <>
@@ -28,4 +29,4 @@ const ItemDetals = ({ item = {}, categories = [] }) => {
     </>
   )
 }
-export default ItemDetals;
+export default ItemDetals

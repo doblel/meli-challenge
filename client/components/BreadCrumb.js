@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import styles from '../styles/BreadCrumb.module.scss';
+import styles from '../styles/BreadCrumb.module.scss'
 
-const Divider = () => (<div className={styles.breadCrumb__divider}>{'>'}</div>);
+const Divider = () => (<div className={styles.breadCrumb__divider}>{'>'}</div>)
 
 const BreadCrumb = ({ items = [] }) => {
 
@@ -18,4 +18,4 @@ const BreadCrumb = ({ items = [] }) => {
   )
 }
 
-export default BreadCrumb;
+export default BreadCrumb

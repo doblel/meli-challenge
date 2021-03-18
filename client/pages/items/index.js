@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
-import MetaData from '../../components/MetaData';
-import ProductList from '../../components/ProductList';
-import useAppContext from '../../context';
-import { searchItems } from '../../services/api';
+import React, { useEffect } from 'react'
+
+import MetaData from '../../components/MetaData'
+import ProductList from '../../components/ProductList'
+import useAppContext from '../../context'
+import { searchItems } from '../../services/api'
 
 export async function getServerSideProps({ params, query }) {
-  const { search } = query;
-  const { items, categories } = await searchItems(search);
+  const { search } = query
+  const { items, categories } = await searchItems(search)
 
   if (!search) {
     return {
@@ -24,9 +25,9 @@ export async function getServerSideProps({ params, query }) {
 }
 
 const SearchPage = ({ search = '', items = [], categories = [] }) => {
-  const { setCategories } = useAppContext();
+  const { setCategories } = useAppContext()
 
-  useEffect(() => setCategories(categories), []);
+  useEffect(() => setCategories(categories), [])
 
   return (
     <>
@@ -36,4 +37,4 @@ const SearchPage = ({ search = '', items = [], categories = [] }) => {
   )
 }
 
-export default SearchPage;
+export default SearchPage

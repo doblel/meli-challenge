@@ -1,8 +1,8 @@
-import Link from 'next/Link';
-import Head from 'next/Head';
+import React from 'react'
+import Link from 'next/Link'
+import Head from 'next/Head'
 
-import React from 'react';
-import EmptyState from '../components/EmptyState';
+import EmptyState from '../components/EmptyState'
 
 const NotFound = () => {
   const linkStyles = {
@@ -10,17 +10,17 @@ const NotFound = () => {
     marginLeft: 3,
     color: 'blue',
     cursor: 'pointer'
-  };
+  }
 
   return (
     <>
       <Head>
         <title>404 Not Found | Mercado Libre</title>
       </Head>
-      <EmptyState title='Ups.. Parece que ha ocurrido un error'>
+      <EmptyState title="Ups.. Parece que ha ocurrido un error">
         <span>
           El producto que busca no se encuentra,
-      <Link href='/'>
+          <Link href="/">
             <span style={linkStyles}>volver al inicio</span>
           </Link>
         </span>
@@ -29,4 +29,4 @@ const NotFound = () => {
   )
 }
 
-export default NotFound;
+export default NotFound

@@ -1,14 +1,14 @@
-import React, { useState, useContext, createContext, useMemo } from 'react';
+import React, { useState, useContext, createContext, useMemo } from 'react'
 
-export const AppContext = createContext({});
+export const AppContext = createContext({})
 
 export const AppContextProvider = ({ children }) => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([])
 
   const values = useMemo(() => ({
     categories,
     setCategories
-  }), [categories]);
+  }), [categories])
 
   return (
     <AppContext.Provider value={values}>{children}</AppContext.Provider>
@@ -16,7 +16,7 @@ export const AppContextProvider = ({ children }) => {
 }
 
 export function useAppContext() {
-  return useContext(AppContext);
+  return useContext(AppContext)
 }
 
-export default useAppContext;
+export default useAppContext

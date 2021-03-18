@@ -1,9 +1,9 @@
-import '../styles/_globals.scss';
-import { AppContextProvider } from "../context";
-import Layout from '../components/Layout';
+import '../styles/_globals.scss'
+import { AppContextProvider } from "../context"
+import Layout from '../components/Layout'
 
 
-function MyApp({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   return (
     <AppContextProvider>
       <Layout Component={Component} pageProps={pageProps} />
@@ -11,4 +11,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default App

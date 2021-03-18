@@ -1,4 +1,4 @@
-@import './variables';
+@import "./variables";
 
 .product {
   display: flex;
@@ -7,7 +7,6 @@
   background: $app-white;
   border-radius: $app-border-radius;
   padding: $spacing-lg;
-  margin-top: $spacing-md;
 
   &__leftContent {
     width: 680px;

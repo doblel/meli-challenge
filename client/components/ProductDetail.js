@@ -1,14 +1,14 @@
-import React from 'react';
-import Image from 'next/Image';
+import React from 'react'
+import Image from 'next/Image'
 
-import styles from '../styles/ProductDetail.module.scss';
+import styles from '../styles/ProductDetail.module.scss'
 
 const ProductDetail = ({ item }) => {
 
   return (
     <div className={styles.product}>
       <div className={styles.product__leftContent}>
-        <Image src={item.image} width="680" height="600" objectFit="contain" className={styles.product__image} />
+        <Image src={item.image} alt="product image" width="680" height="600" objectFit="contain" className={styles.product__image} />
         <div className={styles.product__description}>
           <h2 className={styles.product__description__title}>Descripción</h2>
           <p className={styles.product__description__content}>{item.description}</p>
@@ -30,6 +30,6 @@ const ProductDetail = ({ item }) => {
       </div>
     </div>
   )
-};
+}
 
-export default ProductDetail;
+export default ProductDetail

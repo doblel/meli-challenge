@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 import Image from 'next/Image'
 import Link from 'next/Link'
 
-import styles from '../styles/ProductList.module.scss';
+import styles from '../styles/ProductList.module.scss'
 
 const ProductItem = ({ data }) => {
   return (
     <div className={styles.product}>
-      <Image className={styles.product__image} objectFit="contain" src={data.thumbnail} width="180" height="180" />
+      <Image className={styles.product__image} alt="product image" objectFit="contain" src={data.thumbnail} width="180" height="180" />
       <div className={styles.product__contentWrapper}>
         <p className={styles.product__price}>
           <span>{data.price}</span>
@@ -19,9 +19,9 @@ const ProductItem = ({ data }) => {
       </div>
     </div>
   )
-};
+}
 
-const Divider = () => <div className={styles.divider}></div>;
+const Divider = () => <div className={styles.divider}></div>
 
 const ProductList = ({ items }) => {
   return (
@@ -36,6 +36,6 @@ const ProductList = ({ items }) => {
       ))}
     </ol>
   )
-};
+}
 
-export default ProductList;
+export default ProductList

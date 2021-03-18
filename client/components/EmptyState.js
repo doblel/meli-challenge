@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import styles from '../styles/EmptyState.module.scss';
+import styles from '../styles/EmptyState.module.scss'
 
 const EmptyState = ({ title = '', children }) => (
   <div className={styles.emptyState}>
@@ -9,4 +9,4 @@ const EmptyState = ({ title = '', children }) => (
   </div>
 )
 
-export default EmptyState;
+export default EmptyState
