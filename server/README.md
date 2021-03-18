@@ -20,6 +20,6 @@ npm start
 ## To DO
 + Render html file on root path to provide swagger-like documentation
 + Handle errors
-+ Add the right httpStatus to each response
-+ Format responses
-+ Move mapper functions to utils folder
++ <s>Add the right httpStatus to each response</s>
++ <s>Format responses</s>
++ <s>Move mapper functions to utils folder</s>
