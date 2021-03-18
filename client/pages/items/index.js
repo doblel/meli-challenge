@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 
 import MetaData from '../../components/MetaData'
 import ProductList from '../../components/ProductList'
+import EmptyState from '../../components/EmptyState'
 import useAppContext from '../../context'
 import { searchItems } from '../../services/api'
 
@@ -16,7 +17,10 @@ export async function getServerSideProps({ params, query }) {
     return NOT_FOUND
 
   try {
-    const { items, categories } = await searchItems(search)
+    const { items, categories, err } = await searchItems(search)
+
+    if (err)
+      return NOT_FOUND
 
     return {
       props: {
@@ -25,7 +29,7 @@ export async function getServerSideProps({ params, query }) {
         categories
       }
     }
-  } catch (err) {
+  } catch (error) {
     return NOT_FOUND
   }
 }
@@ -38,7 +42,8 @@ const SearchPage = ({ search = '', items = [], categories = [] }) => {
   return (
     <>
       <MetaData searchParam={search} />
-      <ProductList items={items} />
+      {!!items.length && <ProductList items={items} />}
+      {!items.length && <EmptyState title="No se encontraron resultados" />}
     </>
   )
 }

@@ -4,19 +4,28 @@ const meliApi = require('../services/meli');
 const utils = require('../utils');
 
 router.get('/items', async ({ query, ...req }, res) => {
-  const { search } = query;
-  const { results, filters } = await meliApi.searchItems(search);
-  const statusCode = results.length ? 200 : 204;
+  try {
+    const { search } = query;
+    const { results, filters } = await meliApi.searchItems(search);
+    const statusCode = results.length ? 200 : 204;
+    let categories = [];
 
-  const categoriesFromFilter = filters.find(f => f.id.toLowerCase() === 'category');
-  const [category] = (categoriesFromFilter && categoriesFromFilter.values) || {};
+    if (!!filters.length) {
+      const categoriesFromFilter = filters.find(f => f.id.toLowerCase() === 'category');
+      const [category] = categoriesFromFilter.values || {};
 
-  const categories = await utils.getCategories(category.id);
+      categories = await utils.getCategories(category.id);
+    }
 
-  return res.status(statusCode).json({
-    items: results.map(utils.listItemMapper),
-    categories
-  });
+    return res.status(statusCode).json({
+      items: results.map(utils.listItemMapper),
+      categories
+    });
+  } catch (err) {
+    return res.status(400).json({
+      err
+    });
+  }
 });
 
 router.get('/items/:itemId', async ({ params, ...req }, res) => {
@@ -31,8 +40,7 @@ router.get('/items/:itemId', async ({ params, ...req }, res) => {
     });
   } catch (err) {
     return res.status(400).json({
-      item: {},
-      categories: []
+      err
     });
   }
 });

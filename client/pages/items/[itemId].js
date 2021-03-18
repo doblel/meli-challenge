@@ -16,9 +16,9 @@ export async function getServerSideProps({ params, query }) {
     return NOT_FOUND
 
   try {
-    const { item, categories } = await getItemDetails(itemId);
+    const { item, categories, err } = await getItemDetails(itemId);
 
-    if (!item)
+    if (err)
       return NOT_FOUND
 
     return {
