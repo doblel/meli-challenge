@@ -8,25 +8,33 @@ router.get('/items', async ({ query, ...req }, res) => {
   const { results, filters } = await meliApi.searchItems(search);
   const statusCode = results.length ? 200 : 204;
 
-  let categories = filters.find(f => f.id.toLowerCase() === 'category');
-  const [category] = categories.values;
-  categories = await meliApi.getCategories(category.id);
+  const categoriesFromFilter = filters.find(f => f.id.toLowerCase() === 'category');
+  const [category] = (categoriesFromFilter && categoriesFromFilter.values) || {};
+
+  const categories = await utils.getCategories(category.id);
 
   return res.status(statusCode).json({
     items: results.map(utils.listItemMapper),
-    categories: categories.path_from_root.map(c => c.name)
+    categories
   });
 });
 
 router.get('/items/:itemId', async ({ params, ...req }, res) => {
-  const { itemId } = params;
-  const item = await meliApi.getItemDetails(itemId);
-  const categories = await meliApi.getCategories(item.category_id);
+  try {
+    const { itemId } = params;
+    const item = await meliApi.getItemDetails(itemId);
+    const categories = await utils.getCategories(item.category_id);
 
-  return res.status(200).json({
-    item: utils.itemDetailMapper(item),
-    categories: categories.path_from_root.map(c => c.name)
-  });
+    return res.status(200).json({
+      item: utils.itemDetailMapper(item),
+      categories
+    });
+  } catch (err) {
+    return res.status(400).json({
+      item: {},
+      categories: []
+    });
+  }
 });
 
 module.exports = router;

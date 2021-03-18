@@ -1,3 +1,5 @@
+const meliApi = require('../services/meli');
+
 const CURRENCY_MAPPER = {
   ARS: '$',
   USD: 'US$'
@@ -37,7 +39,18 @@ const itemDetailMapper = item => ({
   picture: item.pictures.find(p => p.id === item.thumbnail_id).url || item.thumbnail
 });
 
+const getCategories = async categoryId => {
+  if (!categoryId) return [];
+  try {
+    const categories = await meliApi.getCategories(categoryId);
+    return (!!categories && categories.path_from_root.map(c => c.name)) || [];
+  } catch (err) {
+    return [];
+  }
+}
+
 module.exports = {
   listItemMapper,
-  itemDetailMapper
+  itemDetailMapper,
+  getCategories
 };
