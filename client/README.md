@@ -26,7 +26,7 @@ npm run dev
 
 ## To DO
 + Improve responsive design to support mobile
-+ Add spinner/progress bar on route navigation
++ <s>Add spinner/progress bar on route navigation</s>
 + Tests
 + <s>Create NotFound Error Handling components</s>
 + Create Internal Error handling components
