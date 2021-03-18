@@ -7,10 +7,13 @@ import styles from '../styles/ProductList.module.scss'
 const ProductItem = ({ data }) => {
   return (
     <div className={styles.product}>
-      <Image className={styles.product__image} alt="product image" objectFit="contain" src={data.thumbnail} width="180" height="180" />
+      <Image className={styles.product__image} alt="product image" objectFit="contain" src={data.picture} width="180" height="180" />
       <div className={styles.product__contentWrapper}>
         <p className={styles.product__price}>
-          <span>{data.price}</span>
+          <span className={styles.product__price__amount}>
+            {data.price.currency} {data.price.amount.toLocaleString('de-DE')}
+          </span>
+          {data.freeShipping && <Image className={styles.product__price__shipping} src="/ic_shipping.png" width={18} height={18} />}
         </p>
         <h2 className={styles.product__title}>{data.title}</h2>
       </div>

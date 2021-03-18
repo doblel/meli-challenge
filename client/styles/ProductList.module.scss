@@ -35,6 +35,10 @@
     color: $app-grey-4;
     margin: 0;
     margin-bottom: $spacing-lg;
+
+  &__amount {
+      margin-right: 10px;
+    }
   }
 
   &__title {

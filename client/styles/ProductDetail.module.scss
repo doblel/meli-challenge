@@ -9,7 +9,13 @@
   padding: $spacing-lg;
 
   &__leftContent {
-    width: 680px;
+    flex: 1;
+    position: relative;
+  }
+
+  &__rightContent {
+    width: calc(1024px - 712px);
+    margin-left: $spacing-lg;
   }
 
   &__description {
@@ -42,6 +48,11 @@
   &__price {
     font-size: $font-46;
     font-weight: 400;
+
+    &__decimals {
+      font-size: $font-24;
+      vertical-align: super;
+    }
   }
   
   &__buyButton {
