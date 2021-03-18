@@ -25,12 +25,13 @@ npm run dev
 + Sass for styling
 
 ## To DO
-+ Improve responsive design
++ Improve responsive design to support mobile
 + Add spinner/progress bar on route navigation
 + Tests
-+ <s>Create NotFound/Error Handling components</s>
++ <s>Create NotFound Error Handling components</s>
++ Create Internal Error handling components
 + <s>Context Provider to Categories Breadcrumb</s>
-+ Lazy load images
++ <s>Lazy load images</s>
 + <s>Create basic HomePage to replace the blank page</s>
 + <s>Update meta tags on each view based on search param (list view) or item title (detail view)</s>
-+ Add tabIndex, role, alt, etc to improve accessibility and usability
++ <s>Add role, alt, etc to improve accessibility and usability</s>
