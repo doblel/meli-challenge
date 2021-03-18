@@ -7,7 +7,7 @@ import EmptyState from '../components/EmptyState'
 const NotFound = () => {
   const linkStyles = {
     textDecoration: 'underline',
-    marginLeft: 3,
+    marginLeft: 5,
     color: 'blue',
     cursor: 'pointer'
   }
@@ -19,7 +19,7 @@ const NotFound = () => {
       </Head>
       <EmptyState title="Ups.. Parece que ha ocurrido un error">
         <span>
-          El producto que busca no se encuentra,
+          La dirección que busca no se encuentra disponible.
           <Link href="/">
             <span style={linkStyles}>volver al inicio</span>
           </Link>

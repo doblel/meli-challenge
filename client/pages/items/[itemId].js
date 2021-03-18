@@ -5,15 +5,30 @@ import ProductDetail from '../../components/ProductDetail'
 import useAppContext from '../../context'
 import { getItemDetails } from '../../services/api'
 
+const NOT_FOUND = {
+  notFound: true
+}
+
 export async function getServerSideProps({ params, query }) {
   const { itemId } = params
-  const { item, categories } = await getItemDetails(itemId)
 
-  return {
-    props: {
-      item,
-      categories
+  if (!itemId)
+    return NOT_FOUND
+
+  try {
+    const { item, categories } = await getItemDetails(itemId);
+
+    if (!item)
+      return NOT_FOUND
+
+    return {
+      props: {
+        item,
+        categories
+      }
     }
+  } catch (err) {
+    return NOT_FOUND
   }
 }
 
