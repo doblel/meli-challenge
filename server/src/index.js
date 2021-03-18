@@ -3,10 +3,10 @@ const app = express();
 const port = 8080;
 
 app.get('/', (req, res) => {
-  res.send('All endpoints are exposed under /api');
+  res.send('All resources are exposed under /api prefix');
 });
 
-app.set('json spaces', 2)
+app.set('json spaces', 2);
 app.use('/api', require('./controllers/items'));
 
 app.listen(port, () => {
